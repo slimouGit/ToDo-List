@@ -1,0 +1,90 @@
+body{padding: 0px; margin: 0px; font-family: sans-serif;}
+header{
+    text-align: center;
+}
+main{
+    margin: 0px auto;
+    width: 90%;
+}
+footer{
+    text-align:center;
+    position: fixed;
+    bottom:0px;
+    width: 100%;
+}
+#formular {
+    padding: 0px;
+    display:flex;
+    width: 100%;
+    margin: 0px;
+}
+
+form{
+    width: 100%;
+}
+input, button, submit{
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+}
+button{
+    border: 0px;
+
+}
+#addItem{
+    float:right;
+    margin: 0px;
+    border: 0px;
+    padding: 10px;
+    border-bottom: 1px solid #a9a9a9;
+    border-radius: 5px;
+    background-image: linear-gradient(#f9f9f9, #e3e3e3);
+}
+input[type=text] {
+    width: 60%;
+    margin: 0px;
+    padding: 10px;
+}
+input[type=button]
+{
+    width: 20%;
+    margin: 0px;
+    color: black;
+    font-weight: bolder;
+}
+
+.error{
+    color: red;
+    padding: 10px;
+}
+
+ul#entries {
+    width: 100%;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+ul#entries li {
+    border-bottom: 1px solid #a9a9a9;
+    padding: 15px 10px;
+    background-image: linear-gradient(#f9f9f9, #e3e3e3);
+}
+
+li.danger{
+    background-image: linear-gradient(#ff0000, #fff023);
+    color: red;
+}
+
+ul#entries li:last-child {
+    border-bottom: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+ul#entries li:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
