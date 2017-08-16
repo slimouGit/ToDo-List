@@ -70,12 +70,12 @@ ul#entries {
 ul#entries li {
     border-bottom: 1px solid #a9a9a9;
     padding: 15px 10px;
-    background-image: linear-gradient(#f9f9f9, #e3e3e3);
+    background-image: linear-gradient(#00ff12, #93ff9b);
 }
 
-li.danger{
-    background-image: linear-gradient(#ff0000, #fff023);
-    color: red;
+ul#entries li.danger{
+    background-image: linear-gradient(#ff0000, #ff9e9e);
+    color: white;
 }
 
 ul#entries li:last-child {
