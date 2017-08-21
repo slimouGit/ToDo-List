@@ -26,6 +26,8 @@ function init() {
         insertToDom(taskNr, val);
     }
 
+    //var help = document.getElementById('help').addEventListener('click', openHelp);
+
     /***************************************************************/
     /*
      aktuelles Datum mit Uhrzeit
@@ -67,17 +69,21 @@ function checkTiming(){
         var itemValue = document.getElementById(itemID).innerHTML;
         var listElement = document.getElementById(itemID);
 
-        var currentTimestampTemp = currentTimestamp.substring(0, 8);
-        itemID = itemID.substring(0, 8);
+        var currentTimestampTemp = currentTimestamp.substring(0, 10);
+        itemID = itemID.substring(0, 10);
 
         console.log(itemValue);
         console.log("Start: " + itemID);
         console.log("Now: "+ currentTimestampTemp);
         console.log("----------------------------------------")
-
-        if(currentTimestampTemp>itemID){
+        if(currentTimestampTemp-itemID>23&&currentTimestampTemp-itemID<70){
+            listElement.classList.add("warning");
+        }
+        if(currentTimestampTemp-itemID>71){
+            listElement.classList.remove("warning");
             listElement.classList.add("danger");
         }
+
     }
 }
 
@@ -163,6 +169,17 @@ function deleteAll() {
         itemList.removeChild(entries[i]);
     }
     var itemsArray = getItem();
+}
+
+//**************************************************************************
+
+function openHelp() {
+    var text =
+        '<p>Diese Anwendung dient als persönliche ToDo-Liste.</p>'+'<p>Die Einträge werden automatisch (nur in dem verwendeten Browser) gespeichert und sind auch beim nächsten Öffnen der Anwendung auf dem selben Gerät/in dem selben Browser vorhanden.</p>'+'<p>Nach Ablauf einer definierten Zeit färben sich die Einträge um. Dadurch wird die jeweilige Dringlichkeit visualisiert.</p>'+'<p>Enzelne Einträge werden gelöscht, indem sie angeklickt werden. Der gesamten Speicher wird gelöscht, indem das Mülltonnen-Icon geklickt wird.</p>';
+    var popupWindow = window.open("about:blank", "newWindow",
+        "width=300,height=400,left=100,top=200");
+    popupWindow.document.write(text);
+    popupWindow.focus();
 }
 
 //**************************************************************************

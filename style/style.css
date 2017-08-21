@@ -1,17 +1,45 @@
-body{padding: 0px; margin: 0px; font-family: sans-serif;}
+body{background:#f6f6f6;padding: 0px; margin: 0px; font-family: sans-serif;}
 header{
-    text-align: center;
+    top: 0px;
+    width:100%;
+    padding: 10px 0px;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: linear-gradient(#00ff12, #93ff9b);
+    box-shadow: 0px 1px 3px black;
+}
+header h1{
+    margin:0px;
+    padding:0px;
+    color: white;
 }
 main{
     margin: 0px auto;
     width: 90%;
 }
+
 footer{
     text-align:center;
-    position: fixed;
+    position: absolute;
     bottom:0px;
     width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-image: linear-gradient(#00ff12, #93ff9b);
+
 }
+
+footer img{
+    margin: 5px;
+}
+
+@media only screen and (min-width: 900px) {
+    main, footer{margin: 0px; padding-left: 5%; width: 30%; text-align:left;}
+}
+
 #formular {
     padding: 0px;
     display:flex;
@@ -44,6 +72,7 @@ input[type=text] {
     width: 60%;
     margin: 0px;
     padding: 10px;
+    border-radius: 5px;
 }
 input[type=button]
 {
@@ -65,6 +94,9 @@ ul#entries {
     margin-top: 10px;
     padding: 0px;
     list-style-type: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.3em;
 }
 
 ul#entries li {
@@ -75,16 +107,62 @@ ul#entries li {
 
 ul#entries li.danger{
     background-image: linear-gradient(#ff0000, #ff9e9e);
-    color: white;
+}
+
+ul#entries li.warning{
+    background-image: linear-gradient(#ff7e00, #fdb773);
 }
 
 ul#entries li:last-child {
     border-bottom: none;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    box-shadow: 0px 1px 3px #ccc;
 }
 
 ul#entries li:first-child {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
+
+/*************************************/
+
+.popUp {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.popUp-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*************************************/

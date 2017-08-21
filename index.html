@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ToDo-List</title>
+    <title>myTODOs</title>
 
     <link type="text/css" rel="stylesheet" href="style/style.css" media="all" />
     <script type="text/javascript" src="script/script.js"></script>
@@ -13,7 +13,7 @@
 <body>
 
 <header>
-    <h1>ToDo-Liste</h1>
+    <h1>my TODOs</h1>
 </header>
 
 <main>
@@ -21,20 +21,54 @@
         <form>
             <input type="text" id="input" value="" placeholder="Aufgabe" type="text">
             <input type="button" id="addItem" value="+">
-            <!--
-            <input type="button" id="delete" value="alle Einträge löschen">
-            -->
         </form>
     </div>
+
     <div class="error" id="error"></div>
+
     <div id="tasks">
         <ul id="entries"> </ul>
     </div>
+
+    <!-- The Modal -->
+    <div id="helpPopup" class="popUp">
+        <!-- Modal content -->
+        <div class="popUp-content">
+            <span class="close">&times;</span>
+            <p>Diese Anwendung dient als persönliche ToDo-Liste.<br><br>Die Einträge werden automatisch (nur in dem verwendeten Browser) gespeichert und sind auch beim nächsten Öffnen der Anwendung auf dem selben Gerät/in dem selben Browser vorhanden.<br><br>Nach Ablauf einer definierten Zeit färben sich die Einträge um. Dadurch wird die jeweilige Dringlichkeit visualisiert.<br><br>Enzelne Einträge werden gelöscht, indem sie angeklickt werden. Der gesamten Speicher wird gelöscht, indem das Mülltonnen-Icon geklickt wird.</p>
+        </div>
+    </div>
+
 </main>
 
 <footer>
-    <p><span id="delete">Speicher leeren</span></p>
+    <img src="img/deletedData_icon.png" id="delete">
+    <img src="img/FAQ_icon.png" id="help">
 </footer>
+
+<script>
+
+    var popUp = document.getElementById('helpPopup');
+    var help = document.getElementById("help");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Klick auf das Hilfe-Icon
+    help.onclick = function() {
+        popUp.style.display = "block";
+    }
+
+    // Klick auf das Span-Objekt
+    span.onclick = function() {
+        popUp.style.display = "none";
+    }
+
+    // Klick irgendwo im Fenster
+    window.onclick = function(event) {
+        if (event.target == popUp) {
+            popUp.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
