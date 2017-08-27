@@ -26,8 +26,6 @@ function init() {
         insertToDom(taskNr, val);
     }
 
-    //var help = document.getElementById('help').addEventListener('click', openHelp);
-
     /***************************************************************/
 
     checkTiming();
@@ -39,6 +37,8 @@ function init() {
 /**
  * Funktion ueberprueft, wie hoch die Differenzzeit zwischen Erstellen des Eintrags und der aktuellen Zeit ist
  * und faerbt den Eintrag ab bestimmter Hoehe um
+ * ab 12 Stunden in Orange
+ * ab 48 Stunden in rot
  */
 function checkTiming(){
     var liItem = document.getElementById("entries").getElementsByTagName("li");
@@ -57,14 +57,13 @@ function checkTiming(){
         console.log("Start: " + itemID);
         console.log("----------------------------------------")
         console.log("Now: " + currentTime);
-        if(currentTime-itemID>60&&currentTimestamp-itemID<1200){
+        if(currentTime-itemID>43200&&currentTime-itemID<=172800){
             listElement.classList.add("warning");
         }
-        if(currentTimestamp-itemID>120){
+        if(currentTime-itemID>172800){
             listElement.classList.remove("warning");
             listElement.classList.add("danger");
         }
-
     }
 }
 
@@ -154,13 +153,3 @@ function deleteAll() {
 
 //**************************************************************************
 
-function openHelp() {
-    var text =
-        '<p>Diese Anwendung dient als persönliche ToDo-Liste.</p>'+'<p>Die Einträge werden automatisch (nur in dem verwendeten Browser) gespeichert und sind auch beim nächsten Öffnen der Anwendung auf dem selben Gerät/in dem selben Browser vorhanden.</p>'+'<p>Nach Ablauf einer definierten Zeit färben sich die Einträge um. Dadurch wird die jeweilige Dringlichkeit visualisiert.</p>'+'<p>Enzelne Einträge werden gelöscht, indem sie angeklickt werden. Der gesamten Speicher wird gelöscht, indem das Mülltonnen-Icon geklickt wird.</p>';
-    var popupWindow = window.open("about:blank", "newWindow",
-        "width=300,height=400,left=100,top=200");
-    popupWindow.document.write(text);
-    popupWindow.focus();
-}
-
-//**************************************************************************

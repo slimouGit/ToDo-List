@@ -145,7 +145,7 @@ ul#entries li:first-child {
     background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
+/* PopUp */
 .popUp-content {
     background-color: #fefefe;
     margin: auto;
@@ -154,7 +154,7 @@ ul#entries li:first-child {
     width: 80%;
 }
 
-/* The Close Button */
+/* Button PopUp schliessen */
 .close {
     color: #aaaaaa;
     float: right;
