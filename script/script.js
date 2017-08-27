@@ -29,25 +29,6 @@ function init() {
     //var help = document.getElementById('help').addEventListener('click', openHelp);
 
     /***************************************************************/
-    /*
-     aktuelles Datum mit Uhrzeit
-     kann man nutzen, um Eintraege nach bestimmter Zeit einzufaerben, z.B. rot
-     */
-    var currentDate = new Date();
-    var currentDay = currentDate.getDate();
-    var currentMonth = currentDate.getMonth()+1;
-    if(currentMonth<10){currentMonth=0+""+currentMonth};
-    var currentYear = currentDate.getFullYear();
-    var currentHour = currentDate.getHours();
-    if(currentHour<10){currentHour=0+""+currentHour};
-    var currentMinute = currentDate.getMinutes();
-    if(currentMinute<10){currentMinute=0+""+currentMinute};
-    var currentSecond = currentDate.getSeconds();
-    if(currentSecond<10){currentSecond=0+""+currentSecond};
-
-    currentTimestamp = currentYear + "" + currentMonth + "" + currentDay + "" + currentHour + "" + currentMinute + "" + currentSecond + "";
-
-    /***************************************************************/
 
     checkTiming();
 
@@ -62,24 +43,24 @@ function init() {
 function checkTiming(){
     var liItem = document.getElementById("entries").getElementsByTagName("li");
     console.log(liItem.length)
-
+    var currentTime = Math.round(Date.now()/1000);
     for(var i = 0; i<liItem.length;i++){
         console.log("item Id: " + liItem[i].id);
         var itemID = liItem[i].id;
+
         var itemValue = document.getElementById(itemID).innerHTML;
         var listElement = document.getElementById(itemID);
 
-        var currentTimestampTemp = currentTimestamp.substring(0, 10);
-        itemID = itemID.substring(0, 10);
+        //itemID = itemID.substring(0, 10);
 
         console.log(itemValue);
         console.log("Start: " + itemID);
-        console.log("Now: "+ currentTimestampTemp);
         console.log("----------------------------------------")
-        if(currentTimestampTemp-itemID>23&&currentTimestampTemp-itemID<70){
+        console.log("Now: " + currentTime);
+        if(currentTime-itemID>60&&currentTimestamp-itemID<1200){
             listElement.classList.add("warning");
         }
-        if(currentTimestampTemp-itemID>71){
+        if(currentTimestamp-itemID>120){
             listElement.classList.remove("warning");
             listElement.classList.add("danger");
         }
@@ -108,7 +89,7 @@ function addToDo() {
     var value = document.getElementById('input').value;
 
     if (value != '') {
-        var taskNr = currentTimestamp;
+        var taskNr = Math.round(Date.now()/1000);
         var taskText = {
             'value': value
         };

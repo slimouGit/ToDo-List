@@ -113,6 +113,10 @@ ul#entries li.warning{
     background-image: linear-gradient(#ff7e00, #fdb773);
 }
 
+ul#entries li.progress{
+    background-image: linear-gradient(#ffff00, #fefe9f);
+}
+
 ul#entries li:last-child {
     border-bottom: none;
     border-bottom-right-radius: 5px;
