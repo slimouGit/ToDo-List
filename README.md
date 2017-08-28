@@ -1,6 +1,6 @@
 # ToDo-List
 
-HTML5, localstorage, CSS3, JavaScript
+HTML5, localstorage, cache manifest, CSS3, JavaScript
 
 persönliche ToDo-Liste speichert Eintraege im localstorage
 Eintraege werden in Abhängigkeit der Zeit umgefaerbt:
