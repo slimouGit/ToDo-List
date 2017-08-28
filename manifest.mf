@@ -1,0 +1,6 @@
+CACHE MANIFEST
+index.html
+style/style.css
+script/script.js
+img/deletedData_icon.png
+img/FAQ_icon.png
